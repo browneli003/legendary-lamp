@@ -48,7 +48,7 @@ else {
             var dailyDate = dailyDate.toLocaleString("en-US", options);
             var days = $("<div>");
             days.addClass("flex row list-item");
-            var titleEl = document.createElement("span");
+            var titleEl = $("<span>");
             titleEl.textContent = dailyDate, cityList;
             days.append(titleEl);
 
