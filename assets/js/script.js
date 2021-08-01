@@ -1,10 +1,10 @@
 var getDailyWeather = function(lat, lon) {
-    var openWeatherAPI = "https://api.openweathermap.org/data/2.5/weather?q=city&appid=341d4c7bb0c2900cac68e22f95df4b8a"
+    var openWeatherAPI = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=341d4c7bb0c2900cac68e22f95df4b8a"
     fetch(openWeatherAPI).then(function(response) {
         if(response.ok) {
         response.json().then(function(data) {
 
-            displayWeather(data);
+            displayWeather(data,lat,lon);
     });
 }
 else { 
@@ -30,16 +30,15 @@ var formSubmitHandler = function(event) {
     if (cityName) {
         getDailyWeather(cityName);
         weatherForm.value = "";
+        return
     }
-else {
-    alert("Please enter a city!");
-}
+
     }
 
     var displayWeather = function(name) {
-        $("#forecast-container").empty();
+        $("#cities").append("#forecast-container")
         for (var i = 0; i < 5; i++) {
-            var cityList = name[i].main.wind;
+            var cityList = name[i].temp.humidity.wind;
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             var dailyUnixTime = data.daily[i].dt;
             var millisecond = dailyUnixTime * 1000;
@@ -53,15 +52,16 @@ else {
             days.append(titleEl);
 
             $("#forecast-container").append(days);
-
-    
             $("#cities").append("#forecast-container")
+            displayCityInfo();
         }
-
+        function displayCityInfo (data) {
+            forecast.innerHTML = data.name
+        
+        }
     }
 
 
 
 
-
-weatherForm.addEventListener("submit", formSubmitHandler);
+weatherForm.addEventListener("click", formSubmitHandler);
