@@ -1,10 +1,10 @@
 var getDailyWeather = function(lat, lon) {
-    var openWeatherAPI = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=341d4c7bb0c2900cac68e22f95df4b8a"
+    var openWeatherAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly,alerts&units=imperial&appid=341d4c7bb0c2900cac68e22f95df4b8a"
     fetch(openWeatherAPI).then(function(response) {
         if(response.ok) {
         response.json().then(function(data) {
 
-            displayWeather(data,lat,lon);
+            displayWeather(data);
     });
 }
 else { 
