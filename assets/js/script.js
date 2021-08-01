@@ -36,7 +36,7 @@ var formSubmitHandler = function(event) {
     }
 
     var displayWeather = function(name) {
-        $("#cities").append("#forecast-container")
+        $("#forecast-container").empty();
         for (var i = 0; i < 5; i++) {
             var cityList = name[i].temp.humidity.wind;
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -47,8 +47,13 @@ var formSubmitHandler = function(event) {
             var dailyDate = dailyDate.toLocaleString("en-US", options);
             var days = $("<div>");
             days.addClass("flex row list-item");
+            days.text(cityList);
+            var cityTemp = $("<div>").text("Tempurature: " + data.daily[i].temp.day + "F");
+            var cityWind = $("<div>").text("Wind: " + data.daily[i].wind_speed + " Mph");
+            var cityHumid = $("<div>").text("Humidity: " + data.daily[i].humidity + "%");
+            var cityImage = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.daily[i].weather[0].icon + ".png");
             var titleEl = document.createElement("span");
-            titleEl.textContent = dailyDate, cityList;
+            titleEl.append(cityTemp,cityWind,cityHumid,cityImage);
             days.append(titleEl);
 
             $("#forecast-container").append(days);
@@ -64,4 +69,4 @@ var formSubmitHandler = function(event) {
 
 
 
-weatherForm.addEventListener("click", formSubmitHandler);
+weatherForm.addEventListener("submit", formSubmitHandler);
