@@ -1,3 +1,8 @@
+:root {
+    --primary: rgb(38, 38, 122);
+    --border-radius: .3rem;
+}
+
 .title {
     text-align: center;
     padding-bottom: 50px;
@@ -35,4 +40,17 @@
     background-color: grey;
     box-shadow: 3px 3px rgb(65, 81, 155);
     transform: translate(-1px, -1px);
+  }
+
+  .city {
+      font-weight: bold;
+      font-size: 2.0rem;
+  }
+
+  .list-item {
+  padding: 1.5%;
+  border-radius: var(--border-radius);
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
   }
