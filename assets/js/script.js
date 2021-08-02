@@ -29,7 +29,6 @@ var formSubmitHandler = function(event) {
 
     if (cityName) {
         getDailyWeather(cityName);
-        weatherForm.value = "";
         return
     }
 
@@ -42,26 +41,22 @@ var formSubmitHandler = function(event) {
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             var dailyUnixTime = data.daily[i].dt;
             var millisecond = dailyUnixTime * 1000;
-    
             var dailyDate = new Date(millisecond);
             var dailyDate = dailyDate.toLocaleString("en-US", options);
             var days = $("<div>");
             days.addClass("flex row list-item");
-            days.text(cityList);
-            var cityTemp = $("<div>").text("Tempurature: " + data.daily[i].temp.day + "F");
-            var cityWind = $("<div>").text("Wind: " + data.daily[i].wind_speed + " Mph");
-            var cityHumid = $("<div>").text("Humidity: " + data.daily[i].humidity + "%");
-            var cityImage = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.daily[i].weather[0].icon + ".png");
             var titleEl = document.createElement("span");
-            titleEl.append(cityTemp,cityWind,cityHumid,cityImage);
+            titleEl.append(dailyDate, cityList);
             days.append(titleEl);
 
             $("#forecast-container").append(days);
-            $("#cities").append("#forecast-container")
-            displayCityInfo();
+            function displayCityInfo() {
+            forecast.innerHTML = dayForecast;
+            
         }
-        function displayCityInfo (data) {
-            forecast.innerHTML = data.name
+        displayCityInfo();
+        //function displayCityInfo (data) {
+            //forecast.innerHTML = data.name
         
         }
     }
@@ -69,4 +64,4 @@ var formSubmitHandler = function(event) {
 
 
 
-weatherForm.addEventListener("submit", formSubmitHandler);
+weatherForm.addEventListener("click", formSubmitHandler);
