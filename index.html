@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header class="title">
+        Weather Dashboard
+    </header>
+
+<div class="search flex-row d-flex justify-content-evenly">
+Search for a City:
+<br>
+<input type="text" name="City" placeholder="Salt Lake City" id="Cities" class="box">
+<button type="submit" id="searchbutton" class="btn btn-primary">Search</button>
+</div>
+<div class="col-12 d-flex justify-content-around" id="bigcities">
+    <button class="btns">New York</button>
+    <button class="btns">Los Angeles</button>
+    <button class="btns">Chicago</button>
+    <button class="btns">Houston</button>
+    <button class="btns">Philadelphia</button>
+    <button class="btns">Phoenix</button>
+</div>
+<main class="flex column">
+<div class="col-12 col-md-8 city" id="cities">
+    Forecast:
+    <div id="forecast-container">
+    </div>
+</div>
+</main>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="./assets/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+:root {
+    --primary: rgb(38, 38, 122);
+    --border-radius: .3rem;
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 2.5rem;
+    color: white;
+    background: rgb(0,93,255);
+    background: linear-gradient(90deg, rgba(0,93,255,1) 17%, rgba(9,9,121,1) 54%, rgba(2,0,36,1) 100%);
+    font-weight: bold;
+}
+
+.search {
+    font-size: 35px;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+.box {
+    
+    border-bottom: black solid 5px;
+    
+}
+
+
+
+.btns {
+    font-size: 1.3rem;
+    text-decoration:none;
+    padding: 6px 5px;
+    width: 15%;
+    display: block;
+    margin: 5px 0;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: grey;
+    box-shadow: 3px 3px rgb(65, 81, 155);
+    transform: translate(-1px, -1px);
+  }
+
+  .city {
+      font-weight: bold;
+      font-size: 2.0rem;
+  }
+
+  .flex-row {
+      display: flex;
+  }
+
+  .list-item {
+  padding: 1.5%;
+  border-radius: var(--border-radius);
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  }
